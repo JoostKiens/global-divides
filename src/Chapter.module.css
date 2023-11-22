@@ -1,0 +1,77 @@
+.Chapter {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: calc(100 * var(--vh-static));
+  justify-content: center;
+}
+
+.ChapterWithGlobe {
+  min-height: calc(100 * var(--vh-static));
+  position: relative;
+  z-index: 0;
+}
+
+.InnerWithGlobe::before {
+  z-index: -1;
+  border: 1px solid #333;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: calc(100% - (0.5 * var(--h-globe)));
+  left: 0;
+  bottom: 0;
+}
+
+.Inner {
+  position: relative;
+}
+
+.Globe {
+  aspect-ratio: 1/1;
+  max-height: calc(50 * var(--vh-static));
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  isolation: isolate;
+}
+
+.Content {
+  padding: 1.6rem 1.6rem 4.8rem 1.6rem;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    padding: 3.2rem 3.2em 6.4rem 3.2em;
+  }
+}
+
+.Title {
+  padding: 0rem 1.6rem 1.6rem 1.6rem;
+  text-transform: uppercase;
+  opacity: 0.6;
+  display: inline-block;
+}
+
+.Loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.LoaderGhost {
+  position: absolute;
+  inset: 4%;
+  background-color: #222;
+  opacity: 0.9;
+  border-radius: 100%;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(10px);
+}
