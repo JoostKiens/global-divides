@@ -27,7 +27,7 @@ export const Globe = ({
       dpr={[1, 2]}
     >
       <Suspense fallback={null}>
-        <ambientLight args={["rgb(255, 255, 255)", 3.75]} />
+        <ambientLight args={["rgb(255, 255, 255)", 8]} />
 
         <directionalLight
           args={["rgb(255, 255, 255)", 0.75]}
