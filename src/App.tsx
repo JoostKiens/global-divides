@@ -41,16 +41,30 @@ const Footer = () => {
         >
           Joost Kiens
         </a>
-        . Made with React Three Fiber, Google Earth Engine, QGIS & Affinity
-        Designer.{" "}
+        . Made for{" "}
+        <a
+          href="https://30daymapchallenge.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          #30DayMapChallenge
+        </a>{" "}
+        with React Three Fiber, Google Earth Engine, QGIS & Affinity Designer.{" "}
         <a
           href="https://crocus-reindeer-69c.notion.site/Sources-f49554c9ea484557a3a2c05684b62312?pvs=4"
           target="_blank"
           rel="noopener noreferrer"
         >
           Data sources
-        </a>.{" "}
-        <a href="https://github.com/JoostKiens/global-divides" target="_blank" rel="noopener noreferrer">Github</a>
+        </a>
+        .{" "}
+        <a
+          href="https://github.com/JoostKiens/global-divides"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </a>
         .
       </small>
     </footer>
