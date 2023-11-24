@@ -27,7 +27,7 @@ export const Globe = ({
       dpr={[1, 2]}
     >
       <Suspense fallback={null}>
-        <ambientLight args={["rgb(255, 255, 255)", 8]} />
+        <ambientLight args={["rgb(255, 255, 255)", 8.5]} />
 
         <directionalLight
           args={["rgb(255, 255, 255)", 0.75]}
@@ -96,7 +96,7 @@ const Equator = () => {
     <mesh rotation={[Math.PI / 2, 0, 0]}>
       <torusGeometry args={[0.9, 0.002, 12, 80]} />
       <motion.meshStandardMaterial
-        color="rgba(55, 55, 55)"
+        color="rgba(40, 40, 40)"
         transition={TRANSITION}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
