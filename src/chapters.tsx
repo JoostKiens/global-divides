@@ -78,7 +78,7 @@ export const chapters = [
       name: "odiac-2022",
       texture: "./textures/pollution.png",
       loaderImage: "./textures/pollution.low-res.webp",
-      initialRotation: [0.258407346410207, 2.29840734641021, 0.4],
+      initialRotation: [0.5, 3.29840734641021, 0],
     },
     id: "odiac-2022",
     title: "Pollution",
