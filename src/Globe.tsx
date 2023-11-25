@@ -27,7 +27,7 @@ export const Globe = ({
       dpr={[1, 2]}
     >
       <Suspense fallback={null}>
-        <ambientLight args={["rgb(255, 255, 255)", 8.5]} />
+        <ambientLight args={["rgb(255, 255, 255)", 5.5]} />
 
         <directionalLight
           args={["rgb(255, 255, 255)", 0.75]}
@@ -105,6 +105,12 @@ const Equator = () => {
   )
 }
 
+const color = {
+  ocean: "rgb(256, 256, 256)",
+  landmass: "rgb(120, 120, 120)",
+  data: "rgb(256, 256, 256)",
+}
+
 const emissive = {
   ocean: "rgb(20, 20, 22)",
   landmass: "rgb(10, 10, 10)",
@@ -137,7 +143,7 @@ export const TextureLayer = ({
       <motion.meshPhongMaterial
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        color="rgb(200, 200, 200)"
+        color={color[variant]}
         emissive={emissive[variant]}
         map={baseTexture}
         shininess={shininess[variant]}
