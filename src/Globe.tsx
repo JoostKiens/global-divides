@@ -25,6 +25,7 @@ export const Globe = ({
       }}
       className={styles.Globe}
       dpr={[1, 2]}
+      gl={{ logarithmicDepthBuffer: true }}
     >
       <Suspense fallback={null}>
         <ambientLight args={["rgb(255, 255, 255)", 5.5]} />
@@ -39,7 +40,7 @@ export const Globe = ({
         >
           <TextureLayer texture="./textures/ocean.webp" variant="ocean" />
           <TextureLayer texture="./textures/landmass.png" variant="landmass" />
-          <TextureLayer texture={layer.texture} variant="data"/>
+          <TextureLayer texture={layer.texture} variant="data" />
           <Equator />
         </RotationManager>
 
@@ -68,7 +69,7 @@ const RotationManager = ({
   }, [isActive, rotationVelocity])
 
   useFrame(() => {
-    if (!autoRotatingGroupRef.current) return
+    if (!autoRotatingGroupRef.current || !isActive) return
     autoRotatingGroupRef.current.rotation.y += rotationVelocity.get()
   })
 
@@ -133,7 +134,7 @@ export const TextureLayer = ({
   texture,
   variant,
 }: {
-  variant: 'ocean' | 'landmass' | 'data'
+  variant: "ocean" | "landmass" | "data"
   texture: string
 }) => {
   const baseTexture = useLoader(TextureLoader, process.env.PUBLIC_URL + texture)
